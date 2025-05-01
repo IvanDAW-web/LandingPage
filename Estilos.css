@@ -1,0 +1,482 @@
+/* Estilos base del cuerpo de la página */
+body {
+  background: url(./IMG/Background.png) no-repeat center center fixed; /* Fondo fijo centrado */
+  background-size: cover; /* El fondo cubre toda la pantalla */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía base */
+  color: #fff; /* Color de texto blanco */
+  text-align: center; /* Texto centrado */
+  margin: 0; /* Sin margen exterior */
+  padding: 0; /* Sin relleno interior */
+  min-height: 100vh; /* Altura mínima igual al alto de la ventana */
+}
+
+/* Página de inicio usando flexbox */
+.pagina-inicio {
+  display: flex; /* Activa Flexbox */
+  flex-direction: column; /* Elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  min-height: 100vh; /* Altura completa de ventana */
+  gap: 2rem; /* Espacio entre elementos */
+}
+
+/* Reset general para todos los elementos */
+* {
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin padding */
+  box-sizing: border-box; /* Modelo de caja incluye borde y relleno */
+}
+
+/* Contenedor principal */
+.container {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semi-transparente */
+  padding: 2rem; /* Relleno interno */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Título principal */
+h1 {
+  font-size: 3rem; /* Tamaño grande */
+  font-weight: 700; /* Negrita */
+  color: #ffffff; /* Blanco */
+}
+
+/* Subtítulo */
+.subtitulo {
+  font-size: 1.2rem; /* Tamaño medio */
+  margin: 1rem 0; /* Margen vertical */
+  color: #ccc; /* Gris claro */
+}
+
+/* Contenedor de botones */
+.botones {
+  margin-top: 1.5rem; /* Margen superior */
+}
+
+/* Estilo general de los botones */
+.btn {
+  background-color: #008cff; /* Fondo azul */
+  color: #fff; /* Texto blanco */
+  padding: 0.7rem 1.5rem; /* Espaciado interno */
+  margin: 0 0.5rem; /* Margen horizontal */
+  border-radius: 5px; /* Bordes redondeados */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold; /* Negrita */
+  transition: transform 0.2s, background-color 0.2s; /* Animaciones suaves */
+}
+
+/* Efecto hover en botones */
+.btn:hover {
+  background-color: #00aaff; /* Azul más claro */
+  transform: scale(1.05); /* Aumenta tamaño al pasar ratón */
+}
+
+/* Sección de contacto en inicio */
+.contacto-index {
+  margin-top: 4rem; /* Margen superior */
+  text-align: center; /* Texto centrado */
+  width: 100%; /* Ancho completo */
+}
+
+/* Estilo específico para página de docente */
+body.docente {
+  background: url(./IMG/Background2.png) no-repeat center center fixed; /* Fondo específico docente */
+  background-size: cover; /* Cubre todo */
+  color: #fff; /* Texto blanco */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía */
+  padding: 2rem; /* Espaciado interno */
+  text-align: center; /* Centrado */
+}
+
+/* Frases superiores en docente */
+.frase-superior h2 {
+  font-size: 1.8rem; /* Tamaño grande */
+  font-weight: 600; /* Negrita media */
+  margin-bottom: 0.5rem; /* Separación inferior */
+  color: #f0f0f0; /* Blanco suave */
+}
+
+.frase-superior h3 {
+  font-size: 1.2rem; /* Tamaño medio */
+  font-weight: 400; /* Peso normal */
+  margin-bottom: 3rem; /* Margen inferior grande */
+  color: #ccc; /* Gris claro */
+}
+
+.frase-superior h4 {
+  font-size: 1.2rem; /* Igual que h3 */
+  font-weight: 400; /* Peso normal */
+  margin-bottom: 3rem; /* Margen inferior */
+  color: #ebebeb; /* Gris aún más claro */
+}
+
+/* Contenedor de paneles */
+.paneles {
+  display: flex; /* Flexbox */
+  flex-wrap: wrap; /* Salto de línea automático */
+  justify-content: center; /* Centrado */
+  gap: 2rem; /* Espacio entre paneles */
+}
+
+/* Cada panel */
+.panel {
+  width: 250px; /* Ancho fijo */
+  height: 250px; /* Alto fijo */
+  perspective: 1000px; /* Perspectiva para 3D */
+  position: relative; /* Relativo para posicionar caras */
+  transform-style: preserve-3d; /* Mantiene hijos en 3D */
+  transition: transform 0.6s; /* Suaviza transformación */
+}
+
+/* Efecto al pasar el ratón por panel */
+.panel:hover {
+  transform: rotateY(180deg); /* Gira 180 grados */
+}
+
+/* Caras del panel */
+.cara {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px; /* Bordes redondeados */
+  backface-visibility: hidden; /* Oculta cara trasera */
+  transition: transform 0.6s; /* Suaviza transformación */
+  position: absolute; /* Superposición de caras */
+  display: flex; /* Flexbox para contenido interno */
+  align-items: center; /* Centro vertical */
+  justify-content: center; /* Centro horizontal */
+  padding: 1rem; /* Espaciado interno */
+  box-sizing: border-box; /* Modelo de caja ajustado */
+  text-align: center; /* Centrado de texto */
+}
+
+/* Cara delantera */
+.cara-delantera {
+  background-color: #008cff; /* Azul */
+  color: #fff; /* Blanco */
+  font-size: 1.2rem; /* Tamaño medio */
+  font-weight: bold; /* Negrita */
+}
+
+/* Cara trasera */
+.cara-trasera {
+  transform: rotateY(180deg); /* Inicialmente girada */
+  background-size: cover; /* Cubre panel */
+  background-position: center; /* Centrado de imagen */
+  color: #fff; /* Blanco */
+  font-weight: bold; /* Negrita */
+  font-size: 1rem; /* Texto algo más pequeño */
+  position: relative; /* Para elementos dentro */
+}
+
+/* Oscurecimiento sobre fondo en cara trasera */
+.cara-trasera::before {
+  content: \"\"; /* Elemento vacío */
+  position: absolute; /* Cubrir toda la cara */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura */
+  border-radius: 10px; /* Redondeo */
+  z-index: 0; /* Detrás del contenido */
+}
+
+/* Texto sobre capa oscura */
+.cara-trasera p {
+  position: relative; /* Encima de la capa oscura */
+  z-index: 1; /* Prioridad visual */
+}
+
+/* Fondos específicos por tipo de panel */
+.panel.infantil .cara-trasera {
+  background-image: url(./IMG/InfantilPanel.jpg); /* Imagen infantil */
+}
+.panel.ingles .cara-trasera {
+  background-image: url(./IMG/EnglishPanel.jpg); /* Imagen inglés */
+}
+.panel.ef .cara-trasera {
+  background-image: url(./IMG/FisicaPanel.png); /* Imagen educación física */
+}
+.panel.c1 .cara-trasera {
+  background-image: url(./IMG/ISEIII.png); /* Imagen C1 inglés */
+}
+
+/* Contenedor principal de la sección docente */
+.contenido-docente {
+  display: flex; /* Activa Flexbox */
+  flex-direction: column; /* Organiza en columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: flex-start; /* Alinea arriba */
+  padding: 2rem 1rem; /* Espaciado interno */
+  max-width: 1000px; /* Ancho máximo */
+  width: 100%; /* Ancho total permitido */
+  margin: 0 auto; /* Centrado automático */
+  text-align: center; /* Texto centrado */
+}
+
+/* Botón fijo para volver arriba */
+.volver {
+  position: fixed; /* Fijo en pantalla */
+  bottom: 20px; /* 20px del borde inferior */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translateX(-50%); /* Ajuste exacto al centro */
+  z-index: 10; /* Prioridad sobre otros elementos */
+}
+
+/* Estilo del botón de volver */
+.volver-btn {
+  background-color: #555; /* Gris oscuro */
+  padding: 0.6rem 1.2rem; /* Relleno interno */
+  font-size: 1rem; /* Tamaño de texto normal */
+  border-radius: 5px; /* Bordes redondeados */
+  text-decoration: none; /* Sin subrayado */
+  color: #fff; /* Texto blanco */
+  font-weight: bold; /* Texto en negrita */
+  transition: background-color 0.2s; /* Animación suave */
+}
+
+/* Efecto hover en botón volver */
+.volver-btn:hover {
+  background-color: #777; /* Color gris más claro al pasar ratón */
+}
+
+/* Menú desplegable */
+.menu-desplegable {
+  position: relative; /* Contexto para submenu */
+  display: inline-block; /* Solo ocupa lo necesario */
+  margin-top: 2rem; /* Margen superior */
+}
+
+/* Botón principal del menú */
+.menu-principal {
+  background-color: #008cff; /* Azul vivo */
+  color: white; /* Texto blanco */
+  padding: 1rem 1.5rem; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño normal */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Redondeado */
+  cursor: pointer; /* Mano al pasar ratón */
+  font-weight: bold; /* Texto en negrita */
+  transition: background-color 0.2s; /* Cambio suave de color */
+}
+
+/* Hover sobre menú principal */
+.menu-principal:hover {
+  background-color: #00aaff; /* Azul más claro */
+}
+
+/* Submenú oculto por defecto */
+.submenu {
+  display: none; /* Inicialmente oculto */
+  position: absolute; /* Posicionado respecto al contenedor */
+  top: 100%; /* Justo debajo del menú principal */
+  left: 0; /* Alineado a la izquierda */
+  background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro translúcido */
+  min-width: 220px; /* Ancho mínimo */
+  border-radius: 5px; /* Bordes redondeados */
+  text-align: left; /* Alineación izquierda */
+  z-index: 1; /* Sobre otros elementos */
+  list-style: none; /* Sin viñetas */
+  padding: 0; /* Sin relleno */
+  margin: 0; /* Sin márgenes */
+}
+
+/* Estilo de enlaces dentro del submenu */
+.submenu li a {
+  color: #fff; /* Blanco */
+  padding: 0.8rem 1rem; /* Espaciado interno */
+  display: block; /* Ocupa todo el ancho */
+  text-decoration: none; /* Sin subrayado */
+  transition: background-color 0.2s; /* Cambio de fondo suave */
+}
+
+/* Hover en enlaces de submenu */
+.submenu li a:hover {
+  background-color: #00aaff; /* Azul claro en hover */
+}
+
+/* Mostrar submenu al pasar ratón sobre menú */
+.menu-desplegable:hover .submenu {
+  display: block; /* Visible */
+}
+
+/* Fondo especial para sección diseñador */
+body.disenador {
+  background: url(./IMG/Background3.png) no-repeat center center fixed; /* Fondo diseñador */
+  background-size: cover; /* Cubre pantalla */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía */
+  color: #fff; /* Texto blanco */
+  margin: 0; /* Sin margen */
+  padding: 2rem; /* Espaciado interno */
+  text-align: center; /* Texto centrado */
+  min-height: 100vh; /* Ocupa altura completa */
+}
+
+/* Fondo especial para sección contacto */
+body.contacto {
+  background: url(./IMG/Background4.png) no-repeat center center fixed; /* Fondo contacto */
+  background-size: cover; /* Cubre pantalla */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía */
+  color: #fff; /* Texto blanco */
+  margin: 0; /* Sin margen */
+  padding: 2rem; /* Espaciado interno */
+  text-align: center; /* Centrado */
+  min-height: 100vh; /* Altura completa */
+}
+
+/* Contenedor del contenido de contacto */
+.contenido-contacto {
+  max-width: 500px; /* Ancho máximo */
+  margin: 0 auto; /* Centrado automático */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro translúcido */
+  padding: 2rem; /* Relleno interno */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Título de la sección contacto */
+.contenido-contacto h2 {
+  font-size: 2rem; /* Tamaño grande */
+  margin-bottom: 1.5rem; /* Separación inferior */
+}
+
+/* Estilos de inputs y textarea */
+.formulario input,
+.formulario textarea {
+  width: 100%; /* Ocupa todo el ancho */
+  margin-bottom: 1rem; /* Margen inferior entre campos */
+  padding: 0.8rem; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  border: none; /* Sin borde */
+  font-size: 1rem; /* Texto normal */
+}
+
+/* Permitir cambiar altura del textarea */
+.formulario textarea {
+  resize: vertical; /* Solo vertical */
+}
+
+/* Botón de formulario */
+.formulario .btn {
+  width: 100%; /* Ocupa todo el ancho */
+  padding: 0.8rem; /* Espaciado interno */
+  font-size: 1.1rem; /* Tamaño mayor */
+}
+
+/* --------- Estilos Responsivos --------- */
+
+/* Para pantallas grandes */
+@media (min-width: 1300px) {
+  #contenedor {
+    width: 1200px; /* Ancho fijo centrado */
+  }
+}
+
+/* Para tablet horizontal */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .galeria {
+    flex-wrap: wrap; /* Permite salto de línea */
+  }
+  .galeria img {
+    width: 30%; /* Tres imágenes por fila */
+  }
+}
+
+/* Para tablet vertical */
+@media (min-width: 600px) and (max-width: 768px) and (orientation: portrait) {
+  .galeria {
+    flex-wrap: wrap; /* Permite salto de línea */
+  }
+  .galeria img {
+    width: 45%; /* Dos imágenes por fila */
+  }
+}
+
+/* Para teléfono horizontal */
+@media (min-width: 480px) and (max-width: 600px) and (orientation: landscape) {
+  .galeria {
+    flex-wrap: wrap; /* Permite salto de línea */
+  }
+  .galeria img {
+    width: 45%; /* Dos imágenes por fila */
+  }
+}
+
+/* Para teléfono vertical */
+@media (max-width: 480px) and (orientation: portrait) {
+  .galeria {
+    flex-direction: column; /* Apila imágenes en columna */
+    align-items: center; /* Centra imágenes */
+  }
+  .galeria img {
+    width: 90%; /* Imagen grande centrada */
+  }
+}
+/* Estilos para la página de CV */
+body.cv {
+  background: #f5f5f5; /* Fondo general claro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333; /* Color de texto principal */
+  margin: 0;
+  padding: 0;
+}
+
+.cv-contenedor {
+  display: flex; /* Activa Flexbox */
+  min-height: 100vh; /* Altura completa */
+}
+
+.cv-lateral {
+  background: #111; /* Fondo oscuro lateral */
+  color: #fff; /*Color blanco*/
+  width: 300px; /*ancho de la columna*/
+  padding: 2rem 1rem; /* Espaciado interno: 2rem arriba y abajo, 1rem izquierda y derecha */
+  display: flex; /* Activa Flexbox para organizar los hijos */
+  flex-direction: column; /* Coloca los hijos en una columna (de arriba a abajo) */
+  align-items: center; /* Centra los hijos horizontalmente dentro del contenedor */
+  gap: 2rem; /* Espacio de 2rem entre cada hijo */
+}
+
+.cv-foto {
+  width: 150px; /*ancho de la imagen*/
+  height: 150px; /*alto de la imagen*/
+  object-fit: cover; /* La imagen se recorta para cubrir todo el espacio disponible sin deformarse */
+  border-radius: 50%; /* Hace la imagen completamente redonda */
+  border: 3px solid #008cff; /* Añade un borde de 3px de grosor y color azul (#008cff) */
+}
+
+.cv-info p, .cv-idioma p {
+  margin: 0.5rem 0; /* Margen de 0.5rem arriba y abajo, sin margen a los lados */
+}
+
+.cv-skills ul {
+  list-style: none; /* Elimina los puntos o viñetas de la lista */
+  padding: 0; /* Elimina el espaciado interno de la lista */
+}
+
+.cv-skills ul li {
+  margin: 0.3rem 0; /* Margen de 0.3rem arriba y abajo, sin margen a los lados */
+}
+
+.cv-principal {
+  flex: 1; /* El elemento ocupa todo el espacio disponible que quede libre */
+  background: #fff; /* Fondo de color blanco */
+  padding: 2rem; /* Espaciado interno de 2rem por todos los lados */
+}
+
+.cv-seccion {
+  margin-bottom: 2rem; /* Deja un espacio de 2rem debajo del elemento */
+}
+
+.cv-seccion h2 {
+  color: #008cff; /* Azul corporativo */
+  margin-bottom: 1rem;
+}
+
+.cv-seccion ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cv-seccion ul li {
+  margin-bottom: 0.5rem;
+}
