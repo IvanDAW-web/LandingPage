@@ -480,3 +480,8 @@ body.cv {
 .cv-seccion ul li {
   margin-bottom: 0.5rem;
 }
+
+/* Estilo personalizado para resaltar los títulos de los estudios */
+.titulo-estudio {
+  font-weight: bold;
+}
